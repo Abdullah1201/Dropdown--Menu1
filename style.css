@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: #64a5b1;
+}
+.navigation{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 120px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    background: #ff076e;
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: height 0.5s, width 0.5s;
+    transition-delay: 0s, 0.75s;
+}
+.navigation.active{
+    width: 300px;
+    height: 400px;
+    transition: width 0.5s, height 0.5s;
+    transition-delay: 0s, 0.75s;
+}
+
+
+.navigation .userBox{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+}
+.navigation.active .userBox{
+    width: calc(100% - 60px);
+}
+.navigation .userBox .image{
+    position: relative;
+    min-width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    border: 10px solid #67d6dd;
+}
+.navigation .userBox .image img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+.navigation .userBox .name{
+    color: antiquewhite;
+    font-size: 1.5rem;
+    white-space: nowrap;
+}
+.navigation .menuToggle{
+
+    position: relative;
+    width: 60px;
+    height: 60px;
+ 
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .navigation .menuToggle::before{
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 2px;
+    background: #555;
+    transform: translateY(-10px);
+    box-shadow: 0 10px;
+ }
+.navigation .menuToggle::after{
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 2px;
+    background: #555;
+    transform: translateY(10px);
+}
+.navigation.active .menuToggle::before{
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 #555;
+}
+.navigation.active .menuToggle::after{
+    transform: translateY(0px) rotate(-45deg);
+    box-shadow: 0 0 #555;
+}
+
+.menu{
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 60px);
+    margin-top: 60px;
+    padding: 20px;
+    border-top: 1px solid rgba(55, 231, 1, 0.815);
+}
+.menu li {
+    list-style: none;
+}
+.menu li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #410303;
+    font-weight: 600;
+}
+.menu li a:hover{
+    color: #4e65ff;
+}
+.menu li a ion-icon{
+    font-size: 1.5rem;
+}
